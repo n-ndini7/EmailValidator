@@ -3,7 +3,8 @@ package com.capgemini;
 import java.util.regex.*;
 import java.util.*;
 
-//Email ID uc3 - check for "abc","@bridgelabz.co"
+//Email ID uc4 - check for optional part and special charatcters allowed in that part
+
 public class EmailValidator {
 
 	public static String email;
@@ -12,7 +13,7 @@ public class EmailValidator {
 	public void EmailCheck(String email) {
 		boolean flag = true;
 		while (flag) {
-			Pattern p = Pattern.compile("abc[a-zA-Z0-9_.]+@bridgelabz.co[a-zA-Z0-9_.]+$");
+			Pattern p = Pattern.compile("abc.[a-zA-Z0-9_.+-]++@bridgelabz.co[a-zA-Z0-9_.]+$");
 			Matcher m = p.matcher(email);
 			if (m.matches()) {
 				System.out.println("Email id is valid!!");
